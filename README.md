@@ -6,6 +6,13 @@ iex -S mix
 
 # Helpdesk.Support.Ticket |> Ash.Changeset.for_create(:create)|> Ash.create!()
 Helpdesk.Support.Ticket |> Ash.Changeset.for_create(:open, %{subject: "My mouse won't click!"}) |> Ash.create!()
+
+
+## Update
+
+ticket = (  Helpdesk.Support.Ticket  |> Ash.Changeset.for_create(:open, %{subject: "My mouse won't click!"})  |> Ash.create!())
+
+Ash.Changeset.for_update(:close)|> Ash.update!()
 ```
 
 - if you fix code, then exec this
