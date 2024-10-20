@@ -13,7 +13,29 @@ Helpdesk.Support.Ticket |> Ash.Changeset.for_create(:open, %{subject: "My mouse 
 ticket = (  Helpdesk.Support.Ticket  |> Ash.Changeset.for_create(:open, %{subject: "My mouse won't click!"})  |> Ash.create!())
 
 Ash.Changeset.for_update(:close)|> Ash.update!()
+
+## Read
+require Ash.Query
+
+tickets =
+  for i <- 0..5 do
+    ticket =
+      Helpdesk.Support.Ticket
+      |> Ash.Changeset.for_create(:open, %{subject: "Issue #{i}"})
+      |> Ash.create!()
+
+    if rem(i, 2) == 0 do
+      ticket
+      |> Ash.Changeset.for_update(:close)
+      |> Ash.update!()
+    else
+      ticket
+    end
+  end
 ```
+
+
+
 
 - if you fix code, then exec this
 ```bash
