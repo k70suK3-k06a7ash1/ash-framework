@@ -23,6 +23,7 @@ defmodule Helpdesk.MixProject do
   defp deps do
     [
       {:ash_postgres, "~> 2.0"},
+      {:absinthe, "~> 1.7.8"},
       {:ash, "~> 3.0"},
       {:igniter, "~> 0.3"}
       # {:dep_from_hexpm, "~> 0.3.0"},
