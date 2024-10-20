@@ -8,6 +8,12 @@ iex -S mix
 Helpdesk.Support.Ticket |> Ash.Changeset.for_create(:open, %{subject: "My mouse won't click!"}) |> Ash.create!()
 ```
 
+- if you fix code, then exec this
+```bash
+iex -S mix
+recompile()
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
