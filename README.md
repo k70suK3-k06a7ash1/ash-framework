@@ -33,6 +33,10 @@ tickets =
       ticket
     end
   end
+
+
+## Find one(contain subject has "2")
+Helpdesk.Support.Ticket|> Ash.Query.filter(contains(subject, "2"))|> Ash.DataLayer.Simple.set_data(tickets)|> Ash.read!()
 ```
 
 
