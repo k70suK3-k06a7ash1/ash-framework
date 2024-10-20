@@ -1,6 +1,10 @@
 # Helpdesk
 
-**TODO: Add description**
+**iex**
+```bash
+iex -S mix
+Helpdesk.Support.Ticket |> Ash.Changeset.for_create(:open, %{subject: "My mouse won't click!"}) |> Ash.create!()
+```
 
 ## Installation
 
