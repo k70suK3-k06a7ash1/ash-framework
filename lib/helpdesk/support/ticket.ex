@@ -2,9 +2,21 @@
 
 defmodule Helpdesk.Support.Ticket do
   # This turns this module into a resource
-  use Ash.Resource, domain: Helpdesk.Support
+  # use Ash.Resource, domain: Helpdesk.Support
+
+  use Ash.Resource,
+    domain: Helpdesk.Support,
+    data_layer: Ash.DataLayer.Ets
 
   actions do
+    relationships do
+      # belongs_to means that the destination attribute is unique, meaning only one related record could exist.
+      # We assume that the destination attribute is `representative_id` based
+      # on the name of this relationship and that the source attribute is `representative_id`.
+      # We create `representative_id` automatically.
+      belongs_to(:representative, Helpdesk.Support.Representative)
+    end
+
     # Use the default implementation of the :read action
     defaults([:read])
 
