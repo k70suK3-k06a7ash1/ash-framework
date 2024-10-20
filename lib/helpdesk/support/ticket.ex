@@ -41,6 +41,10 @@ defmodule Helpdesk.Support.Ticket do
       # change MyCustomChange
       # change {MyCustomChange, opt: :val}
     end
+
+    update :assign do
+      accept([:representative_id])
+    end
   end
 
   # Attributes are the simple pieces of data that exist on your resource
