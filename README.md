@@ -39,7 +39,11 @@ tickets =
 Helpdesk.Support.Ticket|> Ash.Query.filter(contains(subject, "2"))|> Ash.DataLayer.Simple.set_data(tickets)|> Ash.read!()
 ```
 
+## scaffold
+```bash
+mix ash.gen.domain MyApp.Accounts
 
+```
 
 
 - if you fix code, then exec this

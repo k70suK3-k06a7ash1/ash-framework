@@ -1,6 +1,6 @@
 import Config
 
-config :helpdesk, :ash_domains, [Helpdesk.Support]
+config :helpdesk, :ash_domains, [MyApp.Accounts, Helpdesk.Support]
 
 config :ash,
   include_embedded_source_by_default?: false,
